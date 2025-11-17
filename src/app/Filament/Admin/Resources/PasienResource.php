@@ -23,7 +23,29 @@ class PasienResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('no_rm')
+                    ->required()
+                    ->maxLength(30),
+                Forms\Components\TextInput::make('nama_pasien')
+                    ->required()
+                    ->maxLength(100),
+                Forms\Components\TextInput::make('jenis_kelamin')
+                    ->required(),
+                Forms\Components\DatePicker::make('tanggal_lahir'),
+                Forms\Components\TextInput::make('telepon')
+                    ->tel()
+                    ->maxLength(20)
+                    ->default(null),
+                Forms\Components\Textarea::make('alamat')
+                    ->columnSpanFull(),
+                Forms\Components\TextInput::make('nik')
+                    ->maxLength(20)
+                    ->default(null),
+                Forms\Components\TextInput::make('bpjs')
+                    ->maxLength(20)
+                    ->default(null),
+                Forms\Components\TextInput::make('status')
+                    ->required(),
             ]);
     }
 
@@ -31,6 +53,21 @@ class PasienResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('no_rm')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('nama_pasien')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('jenis_kelamin'),
+                Tables\Columns\TextColumn::make('tanggal_lahir')
+                    ->date()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('telepon')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('nik')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('bpjs')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('status'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

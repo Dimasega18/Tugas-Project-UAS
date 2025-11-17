@@ -2,16 +2,146 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class PasienSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        //
+        $data = [
+            [
+                'no_rm' => 'RM-2025-0001',
+                'nama_pasien' => 'Budi Santoso',
+                'jenis_kelamin' => 'L',
+                'tanggal_lahir' => '1990-04-12',
+                'telepon' => '081200000001',
+                'alamat' => 'Jl. Melati No. 10, Jakarta',
+                'nik' => '3175011204900001',
+                'bpjs' => '000012345678',
+                'status' => 'aktif',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'no_rm' => 'RM-2025-0002',
+                'nama_pasien' => 'Siti Rahma',
+                'jenis_kelamin' => 'P',
+                'tanggal_lahir' => '1988-02-20',
+                'telepon' => '081200000002',
+                'alamat' => 'Jl. Kenanga No. 5, Bandung',
+                'nik' => '3273012002880002',
+                'bpjs' => null,
+                'status' => 'aktif',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'no_rm' => 'RM-2025-0003',
+                'nama_pasien' => 'Agus Permana',
+                'jenis_kelamin' => 'L',
+                'tanggal_lahir' => '1995-09-14',
+                'telepon' => '081200000003',
+                'alamat' => 'Jl. Mawar 21, Surabaya',
+                'nik' => '3578011409950003',
+                'bpjs' => '000045612378',
+                'status' => 'aktif',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'no_rm' => 'RM-2025-0004',
+                'nama_pasien' => 'Nina Lestari',
+                'jenis_kelamin' => 'P',
+                'tanggal_lahir' => '1992-11-02',
+                'telepon' => '081200000004',
+                'alamat' => 'Jl. Anggrek No. 7, Yogyakarta',
+                'nik' => '3471020211920004',
+                'bpjs' => null,
+                'status' => 'aktif',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'no_rm' => 'RM-2025-0005',
+                'nama_pasien' => 'Rudi Hartono',
+                'jenis_kelamin' => 'L',
+                'tanggal_lahir' => '1985-07-30',
+                'telepon' => '081200000005',
+                'alamat' => 'Jl. Cemara No. 3, Medan',
+                'nik' => '1271013007850005',
+                'bpjs' => '000078912345',
+                'status' => 'aktif',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'no_rm' => 'RM-2025-0006',
+                'nama_pasien' => 'Maya Sari',
+                'jenis_kelamin' => 'P',
+                'tanggal_lahir' => '1993-05-19',
+                'telepon' => '081200000006',
+                'alamat' => 'Jl. Flamboyan, Semarang',
+                'nik' => '3374011905930006',
+                'bpjs' => null,
+                'status' => 'aktif',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'no_rm' => 'RM-2025-0007',
+                'nama_pasien' => 'Dedi Mahfud',
+                'jenis_kelamin' => 'L',
+                'tanggal_lahir' => '1998-12-10',
+                'telepon' => '081200000007',
+                'alamat' => 'Jl. Teratai No. 4, Bekasi',
+                'nik' => '3174011012980007',
+                'bpjs' => '000067891234',
+                'status' => 'aktif',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'no_rm' => 'RM-2025-0008',
+                'nama_pasien' => 'Lestari Dewi',
+                'jenis_kelamin' => 'P',
+                'tanggal_lahir' => '1987-08-25',
+                'telepon' => '081200000008',
+                'alamat' => 'Jl. Wijaya Kusuma, Depok',
+                'nik' => '3276012508870008',
+                'bpjs' => null,
+                'status' => 'aktif',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'no_rm' => 'RM-2025-0009',
+                'nama_pasien' => 'Adi Prabowo',
+                'jenis_kelamin' => 'L',
+                'tanggal_lahir' => '1991-03-05',
+                'telepon' => '081200000009',
+                'alamat' => 'Jl. Beringin No. 8, Bogor',
+                'nik' => '3271010503910009',
+                'bpjs' => '000056123789',
+                'status' => 'aktif',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'no_rm' => 'RM-2025-0010',
+                'nama_pasien' => 'Putri Aprillia',
+                'jenis_kelamin' => 'P',
+                'tanggal_lahir' => '1996-04-18',
+                'telepon' => '081200000010',
+                'alamat' => 'Jl. Dahlia No. 2, Malang',
+                'nik' => '3573021804960010',
+                'bpjs' => null,
+                'status' => 'aktif',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ];
+
+        DB::table('pasiens')->insert($data);
     }
 }

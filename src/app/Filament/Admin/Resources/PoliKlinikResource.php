@@ -23,7 +23,17 @@ class PoliKlinikResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('rumah_sakit_id')
+                    ->required()
+                    ->numeric(),
+                Forms\Components\TextInput::make('kode_poli')
+                    ->required()
+                    ->maxLength(20),
+                Forms\Components\TextInput::make('nama_poli')
+                    ->required()
+                    ->maxLength(100),
+                Forms\Components\TextInput::make('status')
+                    ->required(),
             ]);
     }
 
@@ -31,7 +41,22 @@ class PoliKlinikResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('rumah_sakit_id')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('kode_poli')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('nama_poli')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('status'),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //

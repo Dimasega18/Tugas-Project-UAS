@@ -23,7 +23,25 @@ class ObatResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('kode_obat')
+                    ->required()
+                    ->maxLength(30),
+                Forms\Components\TextInput::make('nama_obat')
+                    ->required()
+                    ->maxLength(150),
+                Forms\Components\TextInput::make('kategori')
+                    ->required(),
+                Forms\Components\TextInput::make('dosis')
+                    ->maxLength(50)
+                    ->default(null),
+                Forms\Components\TextInput::make('satuan')
+                    ->maxLength(20)
+                    ->default(null),
+                Forms\Components\TextInput::make('harga')
+                    ->numeric()
+                    ->default(null),
+                Forms\Components\TextInput::make('status')
+                    ->required(),
             ]);
     }
 
@@ -31,6 +49,19 @@ class ObatResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('kode_obat')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('nama_obat')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('kategori'),
+                Tables\Columns\TextColumn::make('dosis')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('satuan')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('harga')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('status'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

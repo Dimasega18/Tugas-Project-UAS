@@ -23,7 +23,30 @@ class DokterResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('poliklinik_id')
+                    ->required()
+                    ->numeric(),
+                Forms\Components\TextInput::make('kode_dokter')
+                    ->required()
+                    ->maxLength(20),
+                Forms\Components\TextInput::make('nama_dokter')
+                    ->required()
+                    ->maxLength(100),
+                Forms\Components\TextInput::make('jenis_kelamin')
+                    ->required(),
+                Forms\Components\TextInput::make('spesialis')
+                    ->maxLength(100)
+                    ->default(null),
+                Forms\Components\TextInput::make('telepon')
+                    ->tel()
+                    ->maxLength(20)
+                    ->default(null),
+                Forms\Components\TextInput::make('email')
+                    ->email()
+                    ->maxLength(255)
+                    ->default(null),
+                Forms\Components\TextInput::make('status')
+                    ->required(),
             ]);
     }
 
@@ -31,6 +54,21 @@ class DokterResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('poliklinik_id')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('kode_dokter')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('nama_dokter')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('jenis_kelamin'),
+                Tables\Columns\TextColumn::make('spesialis')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('telepon')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('email')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('status'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

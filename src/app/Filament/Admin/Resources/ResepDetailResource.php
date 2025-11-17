@@ -23,7 +23,26 @@ class ResepDetailResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('resep_id')
+                    ->required()
+                    ->numeric(),
+                Forms\Components\TextInput::make('obat_id')
+                    ->required()
+                    ->numeric(),
+                Forms\Components\TextInput::make('jumlah')
+                    ->required()
+                    ->numeric(),
+                Forms\Components\TextInput::make('aturan_pakai')
+                    ->maxLength(255)
+                    ->default(null),
+                Forms\Components\Textarea::make('catatan')
+                    ->columnSpanFull(),
+                Forms\Components\TextInput::make('harga_satuan')
+                    ->numeric()
+                    ->default(null),
+                Forms\Components\TextInput::make('subtotal')
+                    ->numeric()
+                    ->default(null),
             ]);
     }
 
@@ -31,7 +50,31 @@ class ResepDetailResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('resep_id')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('obat_id')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('jumlah')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('aturan_pakai')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('harga_satuan')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('subtotal')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //

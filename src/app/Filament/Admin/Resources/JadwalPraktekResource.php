@@ -23,7 +23,22 @@ class JadwalPraktekResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('dokter_id')
+                    ->required()
+                    ->numeric(),
+                Forms\Components\TextInput::make('poli_id')
+                    ->numeric()
+                    ->default(null),
+                Forms\Components\TextInput::make('hari')
+                    ->required(),
+                Forms\Components\TextInput::make('jam_mulai')
+                    ->required(),
+                Forms\Components\TextInput::make('jam_selesai')
+                    ->required(),
+                Forms\Components\TextInput::make('status')
+                    ->required(),
+                Forms\Components\Textarea::make('keterangan')
+                    ->columnSpanFull(),
             ]);
     }
 
@@ -31,7 +46,24 @@ class JadwalPraktekResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('dokter_id')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('poli_id')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('hari'),
+                Tables\Columns\TextColumn::make('jam_mulai'),
+                Tables\Columns\TextColumn::make('jam_selesai'),
+                Tables\Columns\TextColumn::make('status'),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //

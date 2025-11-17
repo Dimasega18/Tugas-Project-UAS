@@ -2,16 +2,196 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ObatSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        //
+        $data = [
+            [
+                'kode_obat' => 'OBT-0001',
+                'nama_obat' => 'Paracetamol 500mg',
+                'kategori' => 'tablet',
+                'dosis' => '500mg',
+                'satuan' => 'strip',
+                'harga' => 8000,
+                'status' => 'aktif',
+            ],
+            [
+                'kode_obat' => 'OBT-0002',
+                'nama_obat' => 'Ibuprofen 400mg',
+                'kategori' => 'tablet',
+                'dosis' => '400mg',
+                'satuan' => 'strip',
+                'harga' => 12000,
+                'status' => 'aktif',
+            ],
+            [
+                'kode_obat' => 'OBT-0003',
+                'nama_obat' => 'Amoxicillin 500mg',
+                'kategori' => 'kapsul',
+                'dosis' => '500mg',
+                'satuan' => 'strip',
+                'harga' => 15000,
+                'status' => 'aktif',
+            ],
+            [
+                'kode_obat' => 'OBT-0004',
+                'nama_obat' => 'Cetirizine 10mg',
+                'kategori' => 'tablet',
+                'dosis' => '10mg',
+                'satuan' => 'strip',
+                'harga' => 9000,
+                'status' => 'aktif',
+            ],
+            [
+                'kode_obat' => 'OBT-0005',
+                'nama_obat' => 'Vitamin C 500mg',
+                'kategori' => 'tablet',
+                'dosis' => '500mg',
+                'satuan' => 'strip',
+                'harga' => 7000,
+                'status' => 'aktif',
+            ],
+            [
+                'kode_obat' => 'OBT-0006',
+                'nama_obat' => 'Antasida Doen Tablet',
+                'kategori' => 'tablet',
+                'dosis' => null,
+                'satuan' => 'strip',
+                'harga' => 6000,
+                'status' => 'aktif',
+            ],
+            [
+                'kode_obat' => 'OBT-0007',
+                'nama_obat' => 'Metformin 500mg',
+                'kategori' => 'tablet',
+                'dosis' => '500mg',
+                'satuan' => 'strip',
+                'harga' => 8000,
+                'status' => 'aktif',
+            ],
+            [
+                'kode_obat' => 'OBT-0008',
+                'nama_obat' => 'Amlodipine 10mg',
+                'kategori' => 'tablet',
+                'dosis' => '10mg',
+                'satuan' => 'strip',
+                'harga' => 9000,
+                'status' => 'aktif',
+            ],
+            [
+                'kode_obat' => 'OBT-0009',
+                'nama_obat' => 'Salbutamol Inhaler',
+                'kategori' => 'inhaler',
+                'dosis' => null,
+                'satuan' => 'pcs',
+                'harga' => 35000,
+                'status' => 'aktif',
+            ],
+            [
+                'kode_obat' => 'OBT-0010',
+                'nama_obat' => 'Dexamethasone 0.5mg',
+                'kategori' => 'tablet',
+                'dosis' => '0.5mg',
+                'satuan' => 'strip',
+                'harga' => 5000,
+                'status' => 'aktif',
+            ],
+            [
+                'kode_obat' => 'OBT-0011',
+                'nama_obat' => 'Ranitidine 150mg',
+                'kategori' => 'tablet',
+                'dosis' => '150mg',
+                'satuan' => 'strip',
+                'harga' => 10000,
+                'status' => 'aktif',
+            ],
+            [
+                'kode_obat' => 'OBT-0012',
+                'nama_obat' => 'Omeprazole 20mg',
+                'kategori' => 'kapsul',
+                'dosis' => '20mg',
+                'satuan' => 'strip',
+                'harga' => 11000,
+                'status' => 'aktif',
+            ],
+            [
+                'kode_obat' => 'OBT-0013',
+                'nama_obat' => 'Diazepam 5mg',
+                'kategori' => 'tablet',
+                'dosis' => '5mg',
+                'satuan' => 'strip',
+                'harga' => 14000,
+                'status' => 'aktif',
+            ],
+            [
+                'kode_obat' => 'OBT-0014',
+                'nama_obat' => 'Ondansetron 4mg',
+                'kategori' => 'tablet',
+                'dosis' => '4mg',
+                'satuan' => 'strip',
+                'harga' => 18000,
+                'status' => 'aktif',
+            ],
+            [
+                'kode_obat' => 'OBT-0015',
+                'nama_obat' => 'Clindamycin 300mg',
+                'kategori' => 'kapsul',
+                'dosis' => '300mg',
+                'satuan' => 'strip',
+                'harga' => 20000,
+                'status' => 'aktif',
+            ],
+            [
+                'kode_obat' => 'OBT-0016',
+                'nama_obat' => 'Hydrocortisone Cream 1%',
+                'kategori' => 'salep',
+                'dosis' => '1%',
+                'satuan' => 'tube',
+                'harga' => 15000,
+                'status' => 'aktif',
+            ],
+            [
+                'kode_obat' => 'OBT-0017',
+                'nama_obat' => 'Fluconazole 150mg',
+                'kategori' => 'kapsul',
+                'dosis' => '150mg',
+                'satuan' => 'pcs',
+                'harga' => 16000,
+                'status' => 'aktif',
+            ],
+            [
+                'kode_obat' => 'OBT-0018',
+                'nama_obat' => 'Azithromycin 500mg',
+                'kategori' => 'tablet',
+                'dosis' => '500mg',
+                'satuan' => 'strip',
+                'harga' => 22000,
+                'status' => 'aktif',
+            ],
+            [
+                'kode_obat' => 'OBT-0019',
+                'nama_obat' => 'Tetes Mata Cendo Xitrol',
+                'kategori' => 'tetes',
+                'dosis' => null,
+                'satuan' => 'botol',
+                'harga' => 28000,
+                'status' => 'aktif',
+            ],
+            [
+                'kode_obat' => 'OBT-0020',
+                'nama_obat' => 'Gentamicin Injection 80mg',
+                'kategori' => 'injeksi',
+                'dosis' => '80mg',
+                'satuan' => 'vial',
+                'harga' => 30000,
+                'status' => 'aktif',
+            ],
+        ];
+
+        DB::table('obats')->insert($data);
     }
 }

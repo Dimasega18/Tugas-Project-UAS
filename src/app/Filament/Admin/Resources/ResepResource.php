@@ -23,7 +23,24 @@ class ResepResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('kunjungan_id')
+                    ->numeric()
+                    ->default(null),
+                Forms\Components\TextInput::make('pasien_id')
+                    ->required()
+                    ->numeric(),
+                Forms\Components\TextInput::make('dokter_id')
+                    ->required()
+                    ->numeric(),
+                Forms\Components\TextInput::make('nomor_resep')
+                    ->required()
+                    ->maxLength(50),
+                Forms\Components\DateTimePicker::make('tanggal_resep')
+                    ->required(),
+                Forms\Components\TextInput::make('status')
+                    ->required(),
+                Forms\Components\Textarea::make('catatan')
+                    ->columnSpanFull(),
             ]);
     }
 
@@ -31,6 +48,21 @@ class ResepResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('kunjungan_id')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('pasien_id')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('dokter_id')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('nomor_resep')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('tanggal_resep')
+                    ->dateTime()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('status'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
