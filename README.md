@@ -196,3 +196,9 @@ Menyimpan detail obat dalam resep.
 ## Diagram Relasi (Ringkas)
 
 ![Relasi](images/Relasi.png)
+
+---
+
+## Dashboard Metabase
+
+![Dashboard](images/Dashboard.png)
