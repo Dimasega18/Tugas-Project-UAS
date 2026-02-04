@@ -202,3 +202,10 @@ Menyimpan detail obat dalam resep.
 ## Dashboard Metabase
 
 ![Dashboard](images/Dashboard.png)
+
+---
+
+## Tampilan Minio
+
+![Dashboard](images/Minio.png)
+
